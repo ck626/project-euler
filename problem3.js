@@ -15,22 +15,32 @@
 
 // Declare global prime storage array
 var primeFactors = [];
-var n = 600851475143;
+// Declare the input you want prime factors of
+var input = 600851475143;
+// Declare the starting divisor
 var divisor = 2;
 
 /*********************************************************************
- * Explanation of below:
+ * Explanation of algorithm:
+ *  
+ *  Divide the input by 2 and push divisor to results array if 
+ *  divisibile. If NOT divisible, increase divisor and loop. 
+ *  When input is being divided by it's own value, loop ends.
  * 
- * Using a while loop where "input is greater than 2," keep 
- * dividing the input by divisor (initialized to 2). 
+ * Pseudocode:
  * 
- * If the input is divisible by divisor, push divisor to the 
- * results array, and divide the input by the divisor. 
- * Repeat while loop using the new input. 
+ * WHILE input is greater than 2:
  * 
- * If the input is NOT divisible by current divisor, increment 
- * divisor and repeat while loop using current input and new divisor.
+ *  IF the input is divisible by current divisor: 
+ *      -Push divisor to the results array 
+ *      -Divide the input by the divisor 
+ *      -Repeat the while loop using the new input. 
  * 
+ *  IF the input is NOT divisible by current divisor: 
+ *      -Increment divisor 
+ *      -Repeat while loop using current input and new divisor.
+ * 
+ * PRINT the array to the console or a DOM Element.
  * 
  * *******************************************************************/
 
@@ -43,3 +53,4 @@ while (n > 2) {
     }
 }
 console.log(primeFactors);
+
